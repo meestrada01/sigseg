@@ -22,3 +22,7 @@ export const NotifiOk = (respon) => {
         toast(data);
     }
 };
+
+export const NotiSuccess = (data) => {
+    toast.success(data);
+};

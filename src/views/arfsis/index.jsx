@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 // material-ui
+
 import { Grid, MenuItem, InputLabel, Select, FormControl } from '@mui/material';
 import { getOBDSIS } from '../../store/service/catalogo';
-import { getMigracionData } from '../../store/service/arfsis';
+import { getMigracionData, getVerificarMigracion } from '../../store/service/arfsis';
 import { Meses, Periodos } from '../../json/index';
+import { NotiSuccess } from 'utils/Notif';
 
 // project imports
 import MainCard from 'ui-component/cards/MainCard';
@@ -36,6 +38,14 @@ const GestionArfsis = () => {
         const data = await getMigracionData(ano, mes, base, idpunto);
         if (data) {
             setestado(data.mensaje);
+        }
+    };
+
+    const exeVerificarMigracion = async (codigo, observacion) => {
+        const data = await getVerificarMigracion(codigo, observacion);
+        if (data) {
+            setestado(data);
+            NotiSuccess(`Codigo ${data} Verificado Con Exito.`);
         }
     };
 
@@ -115,7 +125,14 @@ const GestionArfsis = () => {
                     </FormControl>
                 </Grid>
             </Grid>
-            <PuntosDigitacionActivos estado={estado} periodo={periodo} meses={meses} odbsis={odbsis} exeMigracionData={exeMigracionData} />
+            <PuntosDigitacionActivos
+                estado={estado}
+                periodo={periodo}
+                meses={meses}
+                odbsis={odbsis}
+                exeMigracionData={exeMigracionData}
+                exeVerificarMigracion={exeVerificarMigracion}
+            />
         </MainCard>
     );
 };
