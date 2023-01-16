@@ -32,7 +32,7 @@ const GestionArfsis = () => {
     const [meses, setmeses] = useState(mes);
     const [periodo, setperiodo] = useState(ano);
     const [odbsis, setodbsis] = useState('022');
-    const [estado, setestado] = useState('');
+    const [estado, setestado] = useState('Ninguno.');
 
     const exeMigracionData = async (ano, mes, base, idpunto) => {
         const data = await getMigracionData(ano, mes, base, idpunto);
@@ -48,28 +48,27 @@ const GestionArfsis = () => {
             NotiSuccess(`Codigo ${data} Verificado Con Exito.`);
         }
     };
-
     return (
-        <MainCard title="Pagina de Gestion Tramas Arfsis">
-            <Grid container item xs={12} md={12}>
-                <Grid item xs={12} md={4}>
+        <MainCard title="Gestion de Migracion de Base de Datos Arfsis">
+            <Grid container spacing={1} item xs={12} md={12}>
+                <Grid item xs={12} md={3}>
                     <FormControl fullWidth>
-                        <InputLabel required>ODBSIS</InputLabel>
+                        <InputLabel>OFICINAS DESCENTRALIZADAS DEL SEGURO INTEGRAL DE SALUD</InputLabel>
                         <Select
-                            label="ODBSIS"
+                            label="OFICINAS DESCENTRALIZADAS DEL SEGURO INTEGRAL DE SALUD"
                             name="odbsis"
                             id="odbsis"
                             variant="outlined"
                             required
                             fullWidth
-                            onChange={(e) => setodbsis(e.target.value)}
                             value={odbsis}
+                            onChange={(e) => setodbsis(e.target.value)}
                             inputProps={{
                                 autoComplete: 'off'
                             }}
                         >
                             {Dataodbsis.map((option) => (
-                                <MenuItem key={option.codigo} value={option.codigo}>
+                                <MenuItem value={option.codigo} key={option.codigo}>
                                     {option.detalle}
                                 </MenuItem>
                             ))}
@@ -78,16 +77,15 @@ const GestionArfsis = () => {
                 </Grid>
                 <Grid item xs={12} md={2}>
                     <FormControl fullWidth>
-                        <InputLabel required>Año</InputLabel>
+                        <InputLabel required>PERIODO</InputLabel>
                         <Select
-                            label="Año"
                             name="periodo"
                             id="periodo"
                             variant="outlined"
                             required
-                            fullWidth
                             onChange={(e) => setperiodo(e.target.value)}
                             value={periodo}
+                            label="PERIODO"
                             inputProps={{
                                 autoComplete: 'off'
                             }}
@@ -102,9 +100,9 @@ const GestionArfsis = () => {
                 </Grid>
                 <Grid item xs={12} md={2}>
                     <FormControl fullWidth>
-                        <InputLabel required>Mes</InputLabel>
+                        <InputLabel required>MES</InputLabel>
                         <Select
-                            label="Mes"
+                            label="MES"
                             name="meses"
                             id="meses"
                             variant="outlined"

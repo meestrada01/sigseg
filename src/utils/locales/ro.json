@@ -1,13 +1,13 @@
 {
+    "Formato Fua":"Formato Fua",
+    "arfsis": "Arfsis",
     "dashboard": "Tabloul de bord",
     "default": "Mod implicit",
     "analytics": "Analize",
-
     "widget": "Widget",
     "statistics": "Statistici",
     "data": "Date",
     "chart": "Diagramă",
-
     "application": "Cerere",
     "users": "Utilizatori",
     "social-profile": "Profil social",
@@ -33,7 +33,6 @@
     "product-details": "Detalii produs",
     "product-list": "Lista de produse",
     "checkout": "Verifică",
-
     "forms": "Formulare",
     "components": "Componente",
     "autocomplete": "Completare automată",

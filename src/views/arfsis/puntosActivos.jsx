@@ -48,17 +48,16 @@ export function PuntosDigitacionActivos({ estado, periodo, meses, odbsis, exeMig
 
     const tabHeader = [
         // { title: 'CODIGO', field: 'codigo', type: 'numeric', defaultSort: 'desc' },
-        { title: 'CODIGO', field: 'codigo', type: 'numeric', cellStyle: { width: '2%', fontSize: '15px' } },
-        { title: 'ODBSIS', field: 'idodsis', cellStyle: { width: '2%', fontSize: '15px' } },
-        { title: 'PING', field: 'idppd', cellStyle: { width: '2%', fontSize: '15px' } },
-        { title: 'PUNTO DE DIGITACION', field: 'punto', cellStyle: { width: '17%', fontSize: '15px' } },
-        { title: 'ESTADO', field: 'estadof', cellStyle: { width: '3%', fontSize: '15px' } },
-        { title: 'BASE', field: 'base', defaultSort: 'desc', cellStyle: { width: '3%', fontSize: '15px' } },
-        { title: 'FASE', field: 'verificacion', cellStyle: { width: '2%', fontSize: '15px' } },
-        { title: 'FECHA', field: 'fecha', cellStyle: { width: '3%', fontSize: '15px' } },
-        { title: 'USUARIO', field: 'usuario', cellStyle: { width: '3%', fontSize: '10px' } },
-        { title: 'FUAS', field: 'atenciones', type: 'numeric', cellStyle: { width: '2%', fontSize: '15px' } },
-        { title: 'CARGA', field: 'idcarga', type: 'numeric', cellStyle: { width: '2%', fontSize: '15px' } }
+        { title: 'Codigo', field: 'codigo', type: 'numeric', cellStyle: { width: '1%', fontSize: '15px' } },
+        { title: 'Ping', field: 'idppd', cellStyle: { width: '2%', fontSize: '15px' } },
+        { title: 'Punto de Digitacion', field: 'punto', cellStyle: { width: '14%', fontSize: '15px' } },
+        { title: 'Estado', field: 'estadof', cellStyle: { width: '3%', fontSize: '15px' } },
+        { title: 'Base', field: 'base', defaultSort: 'desc', cellStyle: { width: '3%', fontSize: '15px' } },
+        { title: 'Fase', field: 'verificacion', cellStyle: { width: '2%', fontSize: '15px' } },
+        { title: 'Fecha', field: 'fecha', cellStyle: { width: '3%', fontSize: '15px' } },
+        { title: 'Usuario', field: 'usuario', cellStyle: { width: '3%', fontSize: '15px' } },
+        { title: 'Fuas', field: 'atenciones', type: 'numeric', cellStyle: { width: '2%', fontSize: '15px' } },
+        { title: 'Carga', field: 'idcarga', type: 'numeric', cellStyle: { width: '2%', fontSize: '15px' } }
     ];
 
     function GenDataTable(
@@ -155,7 +154,7 @@ export function PuntosDigitacionActivos({ estado, periodo, meses, odbsis, exeMig
                     paging: true,
                     pageSize: 8,
                     emptyRowsWhenPaging: true,
-                    pageSizeOptions: [20, 50, 100],
+                    pageSizeOptions: [8, 20, 50, 100],
                     sorting: true
                 }}
                 localization={{
