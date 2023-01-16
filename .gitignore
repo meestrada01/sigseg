@@ -12,7 +12,7 @@
 /build
 
 # Ignora los archivos relacionados a API keys
-.env
+*.env
 # misc
 .DS_Store
 .env.local
