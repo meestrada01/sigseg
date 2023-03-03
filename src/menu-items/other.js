@@ -2,7 +2,15 @@ import { FormattedMessage } from 'react-intl';
 import jwtDecode from 'jwt-decode';
 import ContactPageOutlinedIcon from '@mui/icons-material/ContactPageOutlined';
 // assets
-import { IconFileInvoice, IconBrandChrome, IconHelp, IconSitemap, IconFileSpreadsheet } from '@tabler/icons';
+import {
+    IconFileInvoice,
+    IconBrandChrome,
+    IconHelp,
+    IconSitemap,
+    IconFileSpreadsheet,
+    IconFileSearch,
+    IconBellRinging
+} from '@tabler/icons';
 
 // constant
 const icons = {
@@ -11,7 +19,9 @@ const icons = {
     IconSitemap,
     ContactPageOutlinedIcon,
     IconFileInvoice,
-    IconFileSpreadsheet
+    IconFileSpreadsheet,
+    IconFileSearch,
+    IconBellRinging
 };
 
 // ==============================|| SAMPLE PAGE & DOCUMENTATION MENU ITEMS ||============================== //
@@ -56,7 +66,30 @@ function Componentes(Idmod) {
               }
             : {};
 
-    const data = [modhome, modproductos, modformfua];
+    const lecpdfrefcon =
+        modulo.findIndex((Obj) => Obj.componente === 'lecpdfrefcon') >= 0
+            ? {
+                  id: 4,
+                  title: <FormattedMessage id="Lector PDF Refcon" />,
+                  type: 'item',
+                  url: '/lecpdfrefcon',
+                  icon: icons.IconFileSearch,
+                  breadcrumbs: false
+              }
+            : {};
+    const gesnotifi =
+        modulo.findIndex((Obj) => Obj.componente === 'gesnotifi') >= 0
+            ? {
+                  id: 5,
+                  title: <FormattedMessage id="Gestion de Notificaciones" />,
+                  type: 'item',
+                  url: '/gesnotifi',
+                  icon: icons.IconBellRinging,
+                  breadcrumbs: false
+              }
+            : {};
+
+    const data = [modhome, modproductos, modformfua, lecpdfrefcon, gesnotifi];
     const modautorizado = data.filter((Obj) => Obj.id > 0);
     return modautorizado;
 }

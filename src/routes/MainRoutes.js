@@ -10,6 +10,8 @@ import jwtDecode from 'jwt-decode';
 const SamplePage = Loadable(lazy(() => import('views/sample-page')));
 const GestionArfsis = Loadable(lazy(() => import('views/arfsis')));
 const FormularioFua = Loadable(lazy(() => import('views/formatounicoatencion/formulario')));
+const LectorPdfRefcon = Loadable(lazy(() => import('views/refcon/lectorPdfRefcon')));
+const GesNotificaciones = Loadable(lazy(() => import('views/notificaciones/notificaciones')));
 // ==============================|| MAIN ROUTING ||============================== //
 const token = localStorage.getItem('serviceToken');
 
@@ -38,6 +40,20 @@ function Componentes(Idmod) {
                   element: <FormularioFua />
               }
             : {};
+    const lecpdfrefcon =
+        modulo.findIndex((Obj) => Obj.componente === 'lecpdfrefcon') >= 0
+            ? {
+                  path: '/lecpdfrefcon',
+                  element: <LectorPdfRefcon />
+              }
+            : {};
+    const gesnotifi =
+        modulo.findIndex((Obj) => Obj.componente === 'gesnotifi') >= 0
+            ? {
+                  path: '/gesnotifi',
+                  element: <GesNotificaciones />
+              }
+            : {};
 
     const data = [
         {
@@ -46,7 +62,10 @@ function Componentes(Idmod) {
         },
         modhome,
         modproductos,
-        modformfua
+        modformfua,
+        lecpdfrefcon,
+        gesnotifi,
+        GesNotificaciones
     ];
 
     return data;

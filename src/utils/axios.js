@@ -30,6 +30,13 @@ export const axiosFiles = axios.create({
     responseType: 'arraybuffer'
 });
 
+export const axiosPdf = axios.create({
+    baseURL: REACT_APP_SERVER_API_SIGSEG,
+    headers: {
+        'Content-Type': 'multipart/form-data'
+    }
+});
+
 // interceptor for http
 axiosFiles.interceptors.response.use(
     (response) => response,

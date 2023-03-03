@@ -26,3 +26,7 @@ export const NotifiOk = (respon) => {
 export const NotiSuccess = (data) => {
     toast.success(data);
 };
+
+export const NotiInfo = (data) => {
+    toast.info(data);
+};

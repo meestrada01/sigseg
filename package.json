@@ -1,7 +1,8 @@
 {
-    "name": "sigseg",
+    "name": "sigsegv2",
     "version": "3.0.2",
     "private": true,
+    "homepage": "sigsegdemo",
     "dependencies": {
         "@emotion/cache": "^11.7.1",
         "@emotion/react": "^11.9.0",
@@ -42,6 +43,7 @@
         "react-images": "^1.2.0-beta.7",
         "react-intl": "^5.24.6",
         "react-otp-input-rc-17": "^2.4.1-minor",
+        "react-pdf": "^6.2.2",
         "react-perfect-scrollbar": "^1.5.8",
         "react-redux": "^7.2.6",
         "react-router-dom": "^6.2.1",
